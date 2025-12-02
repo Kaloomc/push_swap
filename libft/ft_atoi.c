@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nbr_utils.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 11:25:46 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/11/21 16:57:38 by fgarnier         ###   ########.fr       */
+/*   Created: 2025/10/14 08:24:02 by fgarnier          #+#    #+#             */
+/*   Updated: 2025/10/14 11:12:43 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 int	ft_isspace(char c)
 {
@@ -19,11 +19,11 @@ int	ft_isspace(char c)
 		|| c == '\f');
 }
 
-int	ft_atol(const char *str)
+int	ft_atoi(const char *str)
 {
-	int		i;
-	int		signe;
-	long	res;
+	int	i;
+	int	signe;
+	int	res;
 
 	signe = 1;
 	i = 0;
@@ -42,32 +42,4 @@ int	ft_atol(const char *str)
 		i++;
 	}
 	return (res * signe);
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		nb = nb * -1;
-		ft_putchar('-');
-	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		ft_putchar(nb + '0');
-	}
 }

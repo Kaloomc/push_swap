@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_utils.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 16:32:11 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/01 17:42:31 by fgarnier         ###   ########.fr       */
+/*   Created: 2025/10/14 08:55:43 by fgarnier          #+#    #+#             */
+/*   Updated: 2025/10/16 17:06:54 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-char	*ft_strjoin_space(const char *s1, const char *s2)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*res;
-	size_t	i;
-	size_t	j;
+	size_t			total;
+	size_t			i;
+	unsigned char	*ptr;
 
-	if (!s1 || !s2)
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	total = nmemb * size;
+	if ((total / size) != nmemb)
 		return (NULL);
-	res = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1 + 1);
-	if (!res)
+	ptr = (unsigned char *)malloc(total);
+	if (!ptr)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s1[j])
-		res[i++] = s1[j++];
-	res[i] = ' ';
-	i++;
-	j = 0;
-	while (s2[j])
-		res[i++] = s2[j++];
-	res[i] = '\0';
-	return (res);
+	while (i < total)
+		ptr[i++] = 0;
+	return (ptr);
 }

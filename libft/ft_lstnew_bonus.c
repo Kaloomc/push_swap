@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_utils.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 16:32:11 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/01 17:42:31 by fgarnier         ###   ########.fr       */
+/*   Created: 2025/10/15 20:08:35 by fgarnier          #+#    #+#             */
+/*   Updated: 2025/12/01 17:30:39 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-char	*ft_strjoin_space(const char *s1, const char *s2)
+t_list	*ft_lstnew(int content)
 {
-	char	*res;
-	size_t	i;
-	size_t	j;
+	t_list	*newelem;
 
-	if (!s1 || !s2)
+	newelem = malloc(sizeof(t_list));
+	if (!newelem)
 		return (NULL);
-	res = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1 + 1);
-	if (!res)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[j])
-		res[i++] = s1[j++];
-	res[i] = ' ';
-	i++;
-	j = 0;
-	while (s2[j])
-		res[i++] = s2[j++];
-	res[i] = '\0';
-	return (res);
+	newelem->content = content;
+	newelem->next = NULL;
+	return (newelem);
 }

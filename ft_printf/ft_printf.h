@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_utils.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 16:32:11 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/01 17:42:31 by fgarnier         ###   ########.fr       */
+/*   Created: 2025/10/16 20:49:30 by fgarnier          #+#    #+#             */
+/*   Updated: 2025/12/02 15:13:32 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-char	*ft_strjoin_space(const char *s1, const char *s2)
-{
-	char	*res;
-	size_t	i;
-	size_t	j;
+# include <stdarg.h>
+# include <unistd.h>
 
-	if (!s1 || !s2)
-		return (NULL);
-	res = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1 + 1);
-	if (!res)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[j])
-		res[i++] = s1[j++];
-	res[i] = ' ';
-	i++;
-	j = 0;
-	while (s2[j])
-		res[i++] = s2[j++];
-	res[i] = '\0';
-	return (res);
-}
+int		ft_putstr(char *s);
+int		ft_putnbr_base(long n, char *base);
+size_t	ft_strlen(const char *s);
+int		ft_putchar(char c);
+int		ft_putnbr_unsigned(unsigned int n);
+int		ft_print_pointer(void *ptr);
+int		ft_printf(const char *s, ...);
+
+#endif
