@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 15:23:46 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/04 15:54:34 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/12/04 18:14:03 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	set_rank(int size, t_list *ptr, int *arr)
 		while (++i < size)
 			if (arr[i] < ptr->content)
 				rank++;
-		ptr->content = rank;
+		ptr->index = rank;
 		ptr = ptr->next;
 	}
 }
@@ -74,18 +74,18 @@ void	push_back_to_a(t_list **a, t_list **b)
 		tmp = *b;
 		while (tmp)
 		{
-			if (tmp->content > current_max)
-				current_max = tmp->content;
+			if (tmp->index > current_max)
+				current_max = tmp->index;
 			tmp = tmp->next;
 		}
 		if (find_pos(*b, current_max) <= ft_lstsize(*b) / 2)
 		{
-			while ((*b)->content != current_max)
+			while ((*b)->index != current_max)
 				rb(b);
 		}
 		else
 		{
-			while ((*b)->content != current_max)
+			while ((*b)->index != current_max)
 				rrb(b);
 		}
 		pa(a, b);

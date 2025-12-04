@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/04 17:57:23 by fgarnier          #+#    #+#             */
+/*   Updated: 2025/12/04 17:57:23 by fgarnier         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -6,7 +18,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# include <stdio.h>
 long	ft_atol(const char *str);
 char	**parsing(char **av);
 int		check_value(t_list *stack);

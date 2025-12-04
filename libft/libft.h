@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:00:00 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/04 17:31:15 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/12/04 18:10:43 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_list
 {
 	long			content;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 

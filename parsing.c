@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:04:27 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/04 17:37:09 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:58:45 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char	**parsing(char **av)
 	if (only_spaces(new_line) || !verif_line(new_line))
 	{
 		free(new_line);
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 		return (NULL);
 	}
 	res = ft_split(new_line, ' ');

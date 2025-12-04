@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 15:23:46 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/04 15:54:03 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/12/04 18:13:17 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sort_3(t_list **a)
 	int	second;
 	int	third;
 
-	first = (*a)->content;
-	second = (*a)->next->content;
-	third = (*a)->next->next->content;
+	first = (*a)->index;
+	second = (*a)->next->index;
+	third = (*a)->next->next->index;
 	if (first > second && second < third && first < third)
 		sa(a);
 	else if (first > second && second > third)
@@ -46,7 +46,7 @@ int	find_pos(t_list *stack, int rank)
 	pos = 0;
 	while (stack)
 	{
-		if (stack->content == rank)
+		if (stack->index == rank)
 			return (pos);
 		pos++;
 		stack = stack->next;
@@ -66,13 +66,13 @@ void	sort_chunks(t_list **a, t_list **b)
 	i = 0;
 	while (*a)
 	{
-		if ((*a)->content <= i)
+		if ((*a)->index <= i)
 		{
 			pb(a, b);
 			rb(b);
 			i++;
 		}
-		else if ((*a)->content <= i + range)
+		else if ((*a)->index <= i + range)
 		{
 			pb(a, b);
 			i++;
@@ -91,18 +91,18 @@ void	sort_5(t_list **a, t_list **b)
 	while (ft_lstsize(*a) > 3)
 	{
 		ptr = *a;
-		min = ptr->content;
+		min = ptr->index;
 		while (ptr)
 		{
-			if (ptr->content < min)
-				min = ptr->content;
+			if (ptr->index < min)
+				min = ptr->index;
 			ptr = ptr->next;
 		}
 		if (find_pos(*a, min) <= ft_lstsize(*a) / 2)
-			while ((*a)->content != min)
+			while ((*a)->index != min)
 				ra(a);
 		else
-			while ((*a)->content != min)
+			while ((*a)->index != min)
 				rra(a);
 		pb(a, b);
 	}
