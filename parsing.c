@@ -6,11 +6,39 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:04:27 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/01 18:01:16 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:37:09 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_value(t_list *stack)
+{
+	t_list	*current;
+	t_list	*runner;
+
+	current = stack;
+	while (current)
+	{
+		runner = current->next;
+		while (runner)
+		{
+			if (current->content == runner->content)
+			{
+				write(2, "Error\n", 6);
+				return (0);
+			}
+			runner = runner->next;
+		}
+		if (current->content > 2147483647 || current->content < -2147483648)
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		current = current->next;
+	}
+	return (1);
+}
 
 int	only_spaces(char *str)
 {
@@ -67,7 +95,11 @@ char	**parsing(char **av)
 		i++;
 	}
 	if (only_spaces(new_line) || !verif_line(new_line))
+	{
+		free(new_line);
+		write(1, "Error\n", 6);
 		return (NULL);
+	}
 	res = ft_split(new_line, ' ');
 	free(new_line);
 	return (res);

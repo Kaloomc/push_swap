@@ -6,8 +6,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_atol(const char *str);
+# include <stdio.h>
+long	ft_atol(const char *str);
 char	**parsing(char **av);
+int		check_value(t_list *stack);
 char	*ft_strjoin_space(const char *s1, const char *s2);
 
 void	sa(t_list **node);

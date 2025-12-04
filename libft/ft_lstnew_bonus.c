@@ -6,13 +6,13 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:08:35 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/01 17:30:39 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:30:47 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(long content)
 {
 	t_list	*newelem;
 
