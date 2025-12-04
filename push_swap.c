@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:04:33 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/02 15:47:14 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/12/03 18:24:40 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,15 @@ void	print_stack(t_list *stack_a, t_list *stack_b)
 
 int	main(int ac, char **av)
 {
-	t_list	*stack_a;
+	t_list	*a;
 	char	**new_av;
 	int		i;
-	t_list	*stack_b;
+	t_list	*b;
 
-	(void)ac;
-	stack_a = NULL;
-	stack_b = NULL;
+	if (ac < 2)
+		return (0);
+	a = NULL;
+	b = NULL;
 	i = 0;
 	new_av = parsing(&av[1]);
 	if (!new_av)
@@ -66,10 +67,8 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	while (new_av[i])
-		ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(new_av[i++])));
+		ft_lstadd_back(&a, ft_lstnew(ft_atoi(new_av[i++])));
 	free_parsing(new_av);
-	print_stack(stack_a, stack_b);
-	ft_printf("\n");
-	print_stack(stack_a, stack_b);
-	ft_lstclear(&stack_a, &free);
+	sort_stacks(&a, &b);
+	return (0);
 }

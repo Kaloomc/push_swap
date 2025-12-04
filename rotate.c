@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 18:43:33 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/02 15:26:43 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/12/04 15:41:38 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ra(t_list **node)
 
 void	rb(t_list **node)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = *node;
 	*node = (*node)->next;
@@ -34,9 +34,9 @@ void	rb(t_list **node)
 	ft_printf("rb\n");
 }
 
-void	rr(t_list **node_a,t_list **node_b)
+void	rr(t_list **node_a, t_list **node_b)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = *node_a;
 	*node_a = (*node_a)->next;

@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 18:43:33 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/02 15:44:40 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/12/04 15:43:15 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	rrb(t_list **node)
 	ft_printf("rrb\n");
 }
 
-void	rrr(t_list **node_a,t_list **node_b)
+void	rrr(t_list **node_a, t_list **node_b)
 {
 	t_list	*old_last;
 	t_list	*new_last;
@@ -65,7 +65,7 @@ void	rrr(t_list **node_a,t_list **node_b)
 
 t_list	*before_last(t_list *list)
 {
-	t_list *current;
+	t_list	*current;
 
 	current = list;
 	while (current->next->next)

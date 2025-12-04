@@ -6,7 +6,7 @@
 /*   By: fgarnier <fgarnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:12:02 by fgarnier          #+#    #+#             */
-/*   Updated: 2025/12/02 15:18:52 by fgarnier         ###   ########.fr       */
+/*   Updated: 2025/12/04 15:40:49 by fgarnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void	sb(t_list **node)
 
 void	ss(t_list **node_a, t_list **node_b)
 {
-	t_list *elem1;
-	t_list *elem2;
-	t_list *tmp;
+	t_list	*elem1;
+	t_list	*elem2;
+	t_list	*tmp;
 
 	elem1 = *node_a;
 	elem2 = elem1->next;

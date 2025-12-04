@@ -27,4 +27,14 @@ void	rrr(t_list **node_a, t_list **node_b);
 
 t_list	*before_last(t_list *list);
 
+void	sort_stacks(t_list **a, t_list **b);
+void	sort_3(t_list **a);
+int		find_pos(t_list *stack, int rank);
+void	sort_chunks(t_list **a, t_list **b);
+void	sort_5(t_list **a, t_list **b);
+
+void	push_back_to_a(t_list **a, t_list **b);
+int		is_sorted(t_list *stack);
+void	normalize_stack(t_list **stack);
+
 #endif

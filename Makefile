@@ -10,7 +10,8 @@ SRC_DIR         = .
 SRCS            = push_swap.c \
                   str_utils.c \
                   parsing.c \
-                  swap.c push.c rotate.c reverse_rotate.c
+                  swap.c push.c rotate.c reverse_rotate.c \
+				  sort.c sort_small.c
 OBJS            = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
